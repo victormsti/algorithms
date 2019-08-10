@@ -6,18 +6,17 @@ public class BitSumMethod1 {
 
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
-		int biggest = 0;
 
 		String bin1 = s.next();
 		String bin2 = s.next();
-		biggest = checkBiggest(bin1, bin2);
 
-		bitSum(bin1, bin2, biggest);
+		bitSum(bin1, bin2);
 	}
 
 	// do the sum
-	public static void bitSum(String strBin1, String strBin2, int max) {
+	public static void bitSum(String strBin1, String strBin2) {
 
+		int max = Math.max(strBin1.length(), strBin2.length());
 		StringBuilder str = new StringBuilder();
 		char[] bin1 = String.format(("%" + max + "d"), Integer.parseInt(strBin1)).toCharArray();
 		char[] bin2 = String.format(("%" + max + "d"), Integer.parseInt(strBin2)).toCharArray();
@@ -59,21 +58,5 @@ public class BitSumMethod1 {
 		str = str.reverse();
 		System.out.println("The sum is: " + str);
 		System.out.println("The int value is: " + Integer.parseInt(str.toString(), 2));
-	}
-
-	// check the String with the biggest length
-	public static int checkBiggest(String bin1, String bin2) {
-		int biggest = 0;
-		if (bin1.length() > bin2.length()) {
-			biggest = bin1.length();
-		} else if (bin2.length() > bin1.length()) {
-			biggest = bin2.length();
-		}
-		// if they have the same length, return anyone
-		else
-			biggest = bin1.length();
-
-		return biggest;
-
 	}
 }
