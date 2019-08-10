@@ -57,6 +57,5 @@ public class BitSumMethod1 {
 
 		str = str.reverse();
 		System.out.println("The sum is: " + str);
-		System.out.println("The int value is: " + Integer.parseInt(str.toString(), 2));
 	}
 }
