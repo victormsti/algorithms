@@ -1,5 +1,6 @@
 package main;
 
+import java.math.BigInteger;
 import java.util.Scanner;
 
 public class BitSumMethod1 {
@@ -18,8 +19,8 @@ public class BitSumMethod1 {
 
 		int max = Math.max(strBin1.length(), strBin2.length());
 		StringBuilder str = new StringBuilder();
-		char[] bin1 = String.format(("%" + max + "d"), Integer.parseInt(strBin1)).toCharArray();
-		char[] bin2 = String.format(("%" + max + "d"), Integer.parseInt(strBin2)).toCharArray();
+		char[] bin1 = String.format(("%0" + max + "d"), new BigInteger(strBin1)).toString().toCharArray();
+		char[] bin2 = String.format(("%0" + max + "d"), new BigInteger(strBin2)).toString().toCharArray();
 
 		boolean increment = false;
 		// loop the array starting from its final to the begin
