@@ -6,16 +6,16 @@ import java.util.Scanner;
 public class BitSumMethod1 {
 
 	public static void main(String[] args) {
-		Scanner s = new Scanner(System.in);
+		//Scanner s = new Scanner(System.in);
 
-		String bin1 = s.next();
-		String bin2 = s.next();
+		//String bin1 = s.next();
+		//String bin2 = s.next();
 
-		bitSum(bin1, bin2);
+		//bitSum(bin1, bin2);
 	}
 
 	// do the sum
-	public static void bitSum(String strBin1, String strBin2) {
+	public String bitSum(String strBin1, String strBin2) {
 
 		int max = Math.max(strBin1.length(), strBin2.length());
 		StringBuilder str = new StringBuilder();
@@ -56,7 +56,6 @@ public class BitSumMethod1 {
 		if (increment)
 			str.append('1');
 
-		str = str.reverse();
-		System.out.println("The sum is: " + str);
+		return str.reverse().toString();
 	}
 }
